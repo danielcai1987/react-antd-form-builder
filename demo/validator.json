@@ -1,0 +1,12 @@
+{
+    "user":{
+        "input":["req","str,2,10"],
+        "date":["date"],
+        "time":["req","time"],
+        "checkbox":["req","bool"],
+        "email":["req","email"],
+        "url":["url"],
+        "number":["int,-10,10"],
+        "range":["in,1,2,f,a,i,th"]
+    }
+}
