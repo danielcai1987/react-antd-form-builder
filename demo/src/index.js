@@ -5,7 +5,7 @@ import 'antd/dist/antd.css';
 
 import moment from 'moment';
 
-import SmartForm from '../../src';
+import FormBuilder from '../../src';
 import { FIELD_TYPES, FORM_LAYOUT } from '../../src/fieldConfig'
 
 import zhCN from 'antd/lib/locale-provider/zh_CN';
@@ -334,7 +334,7 @@ const Demo = () => {
   return (<LocaleProvider locale={zhCN}>
     <div style={{ background: '#ECECEC', padding: '30px' }}>
       <Card title="Smart Form Demo" bordered={true}>
-          <SmartForm {...formSetting} handler={ h => { formHandler = h } }>
+          <FormBuilder {...formSetting} handler={ h => { formHandler = h } }>
             <FormItem>
               <br/><br/>
               <Button type="secondary" onClick={ () => resetForm() } size="large" style={{marginRight: 8}}>Reset to Initial Value</Button>
@@ -344,7 +344,7 @@ const Demo = () => {
               <Button type="secondary"  size="large" onClick={() => validate(fieldsToValidate)}  style={{marginRight: 8}}>Validate [input] Only</Button>
               <Button type="primary"  size="large" onClick={() => validate()}  style={{marginRight: 8}}>Validate All</Button>
             </FormItem>
-          </SmartForm>
+          </FormBuilder>
       </Card>
     </div>
     </LocaleProvider>)

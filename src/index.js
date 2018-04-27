@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Col, Row, Divider } from 'antd';
 import Loading from './Loading'
 
-import { RestClient, Endpoint, Request } from 'bmo-rest-client';
+import { RestClient, Endpoint, Request } from 'axios-client';
 
 import { FIELD_TYPES, FORM_LAYOUT, getFieldTypes, buildMap, getRules } from './fieldConfig';
 
@@ -96,7 +96,7 @@ const renderField = (props, fieldName, fieldItem, fieldsValue, formRule, isExpan
     return renderingFields
 }
 
-class SmartForm extends React.Component {
+class FormBuilder extends React.Component {
     state = {
         formIsReady: false,
         formRule: {},
@@ -203,4 +203,4 @@ class SmartForm extends React.Component {
     }
 }
 
-export default Form.create()(SmartForm)
+export default Form.create()(FormBuilder)
