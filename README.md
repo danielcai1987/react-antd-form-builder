@@ -1,26 +1,26 @@
-## BMO Smart Form ##
-#### This library is a Form Generator build using React, Antd, etc with automatic validation rule.
+## React Antd Form Builder ##
+#### This library is a form builder using React, Antd, etc with validation rule API connection.
 
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-Firstly, run **`yarn add bmo-smart-form`** to add this dependency to your project.
+Firstly, run **`yarn add react-antd-form-builder`** to add this dependency to your project.
 
-To use SmartForm in your component, import **React**, ReactDOM and all the below components from **antd**
+To use FormBuilder in your component, import **React**, ReactDOM and all the below components from **antd**
 
     import React from 'react';
     import ReactDOM from 'react-dom';
     
-	import { Form, Card, Button, Icon, message  } from 'antd';
+    import { Form, Card, Button, Icon, message  } from 'antd';
     
-	//the below line could be skipped if you have already import it in your App entry index.js
-	import 'antd/dist/antd.css'; 
+    //the below line could be skipped if you have already import it in your App entry index.js
+    import 'antd/dist/antd.css'; 
 
-Import **SmartForm** library
+Import **FormBuilder** library
 
-	import SmartForm from 'bmo-smart-form';
-    import { FIELD_TYPES, FORM_LAYOUT } from 'bmo-smart-form/lib/fieldConfig'
+    import FormBuilder from 'react-antd-form-builder';
+    import { FIELD_TYPES, FORM_LAYOUT } from 'react-antd-form-builder/lib/fieldConfig'
     
 #### Demo functional stateless component
     
@@ -28,7 +28,7 @@ Import **SmartForm** library
     
     const Demo = () => {
     
-	//rate5Star is a function for customized button below.
+    //rate5Star is a function for customized button below.
     const rate5Star = <Button type='primary' size='large' 
     		onClick={ e=>{
     			setField({rate:5})
@@ -411,16 +411,16 @@ E.g. setField({input:'Test', number:11, checkbox:false})
 	    	console.log(result.fields)
 	    }
 
-#### Form opening `<SmartForm {...formSetting} handler={ h => { formHandler = h } }>`
+#### Form opening `<FormBuilder {...formSetting} handler={ h => { formHandler = h } }>`
 
 #### Form children
 All child components between form opening and closing tag will be rendered after form fields, at the bottom of the form.
 
-#### Form closing `</SmartForm>`
+#### Form closing `</FormBuilder>`
 
     
-    	return (<Card title="Smart Form Demo" bordered={true}>
-		      	<SmartForm {...formSetting} handler={ h => { formHandler = h } }>
+    	return (<Card title="Antd Form Builder Demo" bordered={true}>
+		      	<FormBuilder {...formSetting} handler={ h => { formHandler = h } }>
 		    		<FormItem>
 			      		<br/><br/>
 			      		<Button type="secondary" onClick={ () => resetForm() } size="large" style={{marginRight: 8}}>Reset to Initial Value</Button>
@@ -430,7 +430,7 @@ All child components between form opening and closing tag will be rendered after
 			      		<Button type="secondary"  size="large" onClick={() => validate(fieldsToValidate)}  style={{marginRight: 8}}>Validate [input] Only</Button>
 			      		<Button type="primary"  size="large" onClick={() => validate()}  style={{marginRight: 8}}>Validate All</Button>
 			    	</FormItem>
-		      </SmartForm>
+		      </FormBuilder>
     	</Card>)
     }
     
